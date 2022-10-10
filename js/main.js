@@ -1722,8 +1722,6 @@ tau.defaults.pageTransition = "slideup"
 
 // tau native:
 
-//I FUCKING HATE SAMSUNG FOR CREATING THIS SHITTY OS AND THIS SHITTY FRAMEWORK
-
 /* 
 function changePageTo(pageID,addToHistory=true) {
 	if (document.getElementById(currentPage)) {if (document.getElementById(currentPage).getElementsByClassName("post-comments")[0]) {document.getElementById(currentPage).getElementsByClassName("post-comments")[0].remove();}}
