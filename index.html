@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Drop For Reddit</title>
+	<link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.min.css">
+	<link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)" href="lib/tau/wearable/theme/default/tau.circle.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		.ui-scroller { 
+			transition: all 0.5s ease-in-out;
+		}
+		.ui-page {
+			transition:all 0.5s ease-in;
+		}
+		.swipenext, .swipeprev {
+			opacity:0.8;
+			position:absolute;
+			z-index:10;
+			transition:all 0.25s ease-in-out;
+		}
+		.shade {
+			z-index:100;
+			transition:background 0.25s ease-in;
+			width:360px;
+			height:360px;
+			position:absolute;
+			background:rgba(0,0,0,0);
+			top:-360px;
+		}
+		.shade.active {
+			background:rgba(0,0,0,1);
+			top:0px;
+		}
+	</style>
+</head>
+<body id="everything">
+	<div class="shade" id="shade"></div>
+
+	<div class="ui-page ui-page-active" id="main">
+		<header class="ui-header">
+			<h2 class="ui-title">Subreddits</h2>
+		</header>
+		<div class="ui-content">
+			<ul class="ui-listview" id="subredditlist"> 
+			</ul>	
+		</div>
+	</div>
+	
+	<div class="ui-page" id="loading">
+	   <header class="ui-header">
+	      <h2 class="ui-title">Loading...</h2>
+	   </header>
+	   <div class="ui-content content-padding">
+	      Please wait...
+	   </div>
+	   <div class="ui-processing ui-processing-full-size"></div>
+	</div>
+	
+	<div class="ui-page" id="search">
+	   	<header class="ui-header">
+	      	<h2 class="ui-title">Search</h2>
+	   	</header>
+	   	<div class="ui-content content-padding">
+	      	<input id="subredditSearchQuery" type="text" style="width:250px;height:100px;background-color:rgb(8, 42, 57);color:white">
+	   	</div>
+	   	<footer class="ui-footer ui-bottom-button ui-fixed">
+			<button class="ui-btn" onclick="searchSubs()">Search</button>
+		</footer>
+	</div>
+	
+	<script type="text/javascript" src="lib/tau/wearable/js/tau.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
